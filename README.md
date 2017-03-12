@@ -1,23 +1,15 @@
 # zc
 A netcat like utility for ZMQ
 
-    Usage: zc [OPTION]... [TYPE] [ENDPOINT]
-    [OPTION] one of the following options:
+    Usage: zc [OPTION]... TYPE ENDPOINT
+    OPTION: one of the following options:
      -h --help : print this message
      -b --bind : bind instead of connect
      -n --nbiter : number of iterations (0 for infinite loop)
      -v --verbose : print some messages in stderr
-    [TYPE] set ZMQ socket type in req/rep/pub/sub/push/pull
-    [ENDPOINT] a string consisting of two parts as follows: transport://address (see zmq documentation)
-    A netcat for ZMQ
-    Usage: zc [OPTION]... [TYPE] [ENDPOINT]
-    [OPTION] one of the following options:
-     -h --help : print this message
-     -b --bind : bind instead of connect
-     -n --nbiter : number of iterations (0 for infinite loop)
-     -v --verbose : print some messages in stderr
-    [TYPE] set ZMQ socket type in req/rep/pub/sub/push/pull
-    [ENDPOINT] a string consisting of two parts as follows: transport://address (see zmq documentation)
+    TYPE: set ZMQ socket type in req/rep/pub/sub/push/pull
+    ENDPOINT: a string consisting of two parts as follows: transport://address (see zmq documentation)
+
 
 Some examples of use:
 

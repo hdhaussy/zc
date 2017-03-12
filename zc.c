@@ -11,14 +11,14 @@ int verbose = 0;
 
 void print_help() {
   printf("A netcat like utility for ZMQ\n");
-  printf("Usage: zc [OPTION]... [TYPE] [ENDPOINT]\n");
-  printf("[OPTION] one of the following options:\n");
+  printf("Usage: zc [OPTION]... TYPE ENDPOINT\n");
+  printf("OPTION: one of the following options:\n");
   printf(" -h --help : print this message\n");
   printf(" -b --bind : bind instead of connect\n");
   printf(" -n --nbiter : number of iterations (0 for infinite loop)\n");
   printf(" -v --verbose : print some messages in stderr\n");
-  printf("[TYPE] set ZMQ socket type in req/rep/pub/sub/push/pull\n");
-  printf("[ENDPOINT] a string consisting of two parts as follows: transport://address (see zmq documentation)\n");
+  printf("TYPE: set ZMQ socket type in req/rep/pub/sub/push/pull\n");
+  printf("ENDPOINT: a string consisting of two parts as follows: transport://address (see zmq documentation)\n");
 }
 
 void exit_with_zmq_error(const char* where) {
@@ -110,6 +110,7 @@ int main(int argc, char** argv) {
      switch(c) {
        case 'h':
          print_help();
+         exit(0);
          break;
        case 'b':
          bind = 1;
