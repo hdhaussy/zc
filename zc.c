@@ -66,7 +66,7 @@ size_t recv_to_stdout(void* socket) {
   while(more) {
     zmq_msg_t msg;
 
-    zmq_msg_init(&msg);
+    err = zmq_msg_init(&msg);
     if(err) exit_with_zmq_error("zmq_msg_init");
     
     err = zmq_recvmsg(socket, &msg, 0);
