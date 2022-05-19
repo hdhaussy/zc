@@ -1,2 +1,7 @@
 LDLIBS=-lzmq
-zc: zc.o
+EXE=zc
+
+all: $(EXE)
+
+clean:
+	rm -f $(EXE)

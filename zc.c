@@ -50,7 +50,7 @@ size_t send_from_stdin(void* socket) {
   err = zmq_msg_init_data(&msg, buffer, total, free_buffer, NULL);
   if(err) exit_with_zmq_error("zmq_msg_init_data");
 
-  if(verbose) fprintf(stderr, "sending %d bytes\n", total);
+  if(verbose) fprintf(stderr, "sending %lu bytes\n",(unsigned long) total);
 
   err = zmq_sendmsg(socket, &msg, 0);
   if(err==-1) exit_with_zmq_error("zmq_sendmsg");
@@ -75,7 +75,7 @@ size_t recv_to_stdout(void* socket) {
     // print message to stdout
     size_t size = zmq_msg_size(&msg);
     total += size;
-    if(verbose) fprintf(stderr, "receiving %d bytes\n", size);
+    if(verbose) fprintf(stderr, "receiving %ld bytes\n",(unsigned long) size);
     fwrite(zmq_msg_data(&msg), 1, size, stdout);
 
     err = zmq_msg_close(&msg);
