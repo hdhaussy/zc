@@ -13,7 +13,9 @@ jobs:
 
     steps:
     - name: install dependencies
-      run : sudo apt install -y libzmq3-dev
+      run : |
+        sudo apt update
+        sudo apt install -y libzmq3-dev
   
     - uses: actions/checkout@v3
 
